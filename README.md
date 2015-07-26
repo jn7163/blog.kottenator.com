@@ -1,2 +1,12 @@
-# my-little-blog
-The name of the repository describes everything
+# My Little Blog
+
+The name describes everything.
+I need a blog - I create it :)
+
+# Install
+
+```bash
+mkvirtualenv my-little-blog
+pip install -r requirements.txt
+python manage.py runserver
+```
