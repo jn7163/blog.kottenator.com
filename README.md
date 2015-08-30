@@ -1,7 +1,12 @@
 # My Little Blog
 
 The name describes everything.
-I need a blog - I create it :)
+I need a blog - I create a blog.
+
+# Requisites
+
+- Python 3.4
+- ... and all requisites for all dependencies in `requirements.txt`
 
 # Install
 
