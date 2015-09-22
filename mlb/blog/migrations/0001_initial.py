@@ -32,6 +32,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='article',
             name='labels',
-            field=models.ManyToManyField(to='blog.Label'),
+            field=models.ManyToManyField(to='mlb.blog.Label'),
         ),
     ]

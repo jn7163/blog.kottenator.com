@@ -1,0 +1,5 @@
+-r base.pip
+
+pytest
+pytest-django
+pytest-cov

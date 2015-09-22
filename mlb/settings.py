@@ -1,10 +1,7 @@
 import os
-import sys
 import dj_database_url
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-sys.path.insert(0, os.path.join(BASE_DIR, 'src'))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SECRET_KEY = os.getenv('MLB_SECRET_KEY')
 DEBUG = True
@@ -18,7 +15,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # blog apps
-    'blog',
+    'mlb.blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -32,7 +29,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'conf.urls'
+ROOT_URLCONF = 'mlb.urls'
 
 TEMPLATES = [
     {
@@ -50,7 +47,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'conf.wsgi.application'
+WSGI_APPLICATION = 'mlb.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(os.getenv('MLB_DATABASE_URL', 'sqlite:///var/run/db.sqlite3'))
@@ -59,4 +56,4 @@ DATABASES = {
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'var', 'static')
+STATIC_ROOT = os.getenv('MLB_STATIC_ROOT')
