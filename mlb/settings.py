@@ -43,6 +43,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'mlb.core.context_processors.project_metadata'
             ],
         },
     },
@@ -58,3 +59,6 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.getenv('MLB_STATIC_ROOT')
+
+# custom settings
+MLB_PROJECT_TITLE = os.getenv('MLB_PROJECT_TITLE', "My Little Blog")
