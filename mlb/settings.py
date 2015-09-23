@@ -15,6 +15,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # blog apps
+    'mlb.core',
     'mlb.blog',
 )
 
