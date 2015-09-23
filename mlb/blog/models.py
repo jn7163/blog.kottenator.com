@@ -12,13 +12,19 @@ class Article(models.Model):
     # Also if it's blank - the article will be hidden.
     published_at = models.DateTimeField(blank=True, null=True)
 
+    class Meta:
+        db_table = 'mlb_blog_article'
+
     def __str__(self):
-        return '{}: "{}"'.format(self.__class__.__name__, self.title)
+        return self.title
 
 
 class Label(models.Model):
     title = models.CharField(max_length=2000)
     slug = models.SlugField(max_length=2000, unique=True)
 
+    class Meta:
+        db_table = 'mlb_blog_label'
+
     def __str__(self):
-        return '{}: "{}"'.format(self.__class__.__name__, self.title)
+        return self.title
