@@ -58,7 +58,7 @@ DATABASES = {
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 STATIC_URL = '/static/'
-STATIC_ROOT = os.getenv('MLB_STATIC_ROOT')
+STATIC_ROOT = os.getenv('MLB_STATIC_ROOT', os.path.join(BASE_DIR, 'var', 'static'))
 
 # custom settings
 MLB_PROJECT_TITLE = os.getenv('MLB_PROJECT_TITLE', "My Little Blog")

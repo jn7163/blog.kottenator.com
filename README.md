@@ -1,5 +1,6 @@
 # My Little Blog
 
-The name describes everything.
-I need a blog - I create a blog.
-Read the Docs for details.
+"My Little Blog" is a super simple blog engine that I've created
+for my own blog but then decided to share with all the people.
+
+[Read the Docs](http://my-little-blog.readthedocs.org/en/latest/) for details.

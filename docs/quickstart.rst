@@ -1,10 +1,16 @@
 Quick Start
 ===========
 
+I will provide instructions for Linux/Mac OS X.
+If you have experience with Python development in Windows -
+it should be easy to do the same in Windows too *(it's just slightly different, you know)*.
+
+
 Requisites
 ----------
 
 - Python 3.4+
+
 
 Installation
 ------------
@@ -17,34 +23,20 @@ The only way to install it now is to clone the source code:
     git clone https://github.com/kottenator/my-little-blog.git
 
 Now create a virtualenv & pip install requirements.
-I will provide instructions for Linux/Mac OS X.
-
-Using ``virtualenvwrapper`` tool:
 
 .. code:: bash
 
-    mkvirtualenv my-little-blog -r requirements/base.pip
-
-Using pure Python ``virtualenv``:
-
-.. code:: bash
-
-    mkdir -p ~/.virtualenvs/
-    virtualenv ~/.virtualenvs/my-little-blog/
-    source ~/.virtualenvs/my-little-blog/bin/activate
+    virtualenv venv && . venv/bin/activate
     pip install -r requirements/base.pip
 
-Local run/development
----------------------
+
+Local run
+---------
 
 .. code:: bash
 
+    export MLB_SECRET_KEY='42'
     ./manage.py runserver
 
-Testing
--------
-
-.. code:: bash
-
-    pip install -r requirements/test.pip
-    py.test
+There are more environment variables that you can specify.
+And there are more ways to install the project. See :doc:`development` section.

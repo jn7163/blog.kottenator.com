@@ -1,11 +1,13 @@
 .. my-little-blog documentation master file
 
-Welcome to my-little-blog's documentation!
-==========================================
+"My Little Blog" documentation
+==============================
 
-Contents:
+"My Little Blog" (MLB) is a super simple blog engine that I've started
+as my own blog but then decided to share with all the people.
 
 .. toctree::
 
-    quickstart
-    webfonts
+   Home <self>
+   quickstart
+   development

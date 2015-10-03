@@ -1,0 +1,106 @@
+Development
+===========
+
+Advanced installation
+---------------------
+
+I encourage you to install the virtualenv outside the project folder
+to not "spoil" the IDE search, project indexing, etc.
+For example into ``~/.virtualenvs/my-little-blog/``.
+
+Using ``virtualenvwrapper`` tool:
+
+.. code:: bash
+
+    mkvirtualenv my-little-blog -r requirements/base.pip
+
+Using pure Python ``virtualenv``:
+
+.. code:: bash
+
+    mkdir -p ~/.virtualenvs/
+    virtualenv ~/.virtualenvs/my-little-blog/
+    . ~/.virtualenvs/my-little-blog/bin/activate
+    pip install -r requirements/base.pip
+
+
+
+Local run
+---------
+
+.. code:: bash
+
+    export MLB_SECRET_KEY='42'
+    ./manage.py runserver
+
+There are more environment variables that you can specify:
+
+- ``MLB_SECRET_KEY`` - Django project's ``SECRET_KEY``, the only **required variable**.
+- ``MLB_DATABASE_URL`` - Django project's database.
+  See `dj-database-url <https://github.com/kennethreitz/dj-database-url>`_ for details.
+  *Default:* ``sqlite:///var/run/db.sqlite3``
+- ``MLB_PROJECT_TITLE`` - site's title that will be displayed in header. *Default:* ``My Little Blog``
+- ``MLB_STATIC_ROOT`` - path to Django project static files folder.
+  Important only for production site, when you do ``./manage.py collectstatic``, and maybe for some
+  third-party Django apps like `django-compressor <https://github.com/django-compressor/django-compressor>`_.
+  *Default:* ``./var/static/``
+
+
+Testing
+-------
+
+.. code:: bash
+
+    pip install -r requirements/test.pip
+    py.test
+
+
+Web Fonts
+---------
+
+Currently I carry web-fonts with the code so I don't need Internet to develop the site.
+When I will release the first version, I will take care about web-fonts CDN usage.
+
+As for now, here is little notice about web-fonts embedding
+taken from `CSS-Tricks article <https://css-tricks.com/snippets/css/using-font-face/>`_:
+
+
+Default example
+***************
+
+.. code-block:: css
+
+    @font-face {
+        font-family: 'MyWebFont';
+        src: url('myfont.woff2') format('woff2'),
+            url('myfont.woff') format('woff'),
+            url('myfont.ttf') format('truetype');
+    }
+
+Browsers support:
+
+======= ======= ======= ======= ======= ======= =======
+Chrome  Firefox IE      Safari  Opera   Android iOS
+======= ======= ======= ======= ======= ======= =======
+3.5+    3.5+    9+      3+      10.1+   2.2+    4.3+
+======= ======= ======= ======= ======= ======= =======
+
+
+Progressive example
+*******************
+
+.. code-block:: css
+
+    @font-face {
+        font-family: 'MyWebFont';
+        src: url('myfont.woff2') format('woff2'),
+            url('myfont.woff') format('woff');
+    }
+
+Browsers support:
+
+======= ======= ======= ======= ======= ======= =======
+Chrome  Firefox IE      Safari  Opera   Android iOS
+======= ======= ======= ======= ======= ======= =======
+5+      3.6+    9+      5.1+    11.5+   4.4+    5.1+
+======= ======= ======= ======= ======= ======= =======
