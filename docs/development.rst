@@ -28,7 +28,6 @@ Configuration
 -------------
 
 I follow `The Twelve-Factor App <http://12factor.net/>`_ methodology.
-
 To configure the project, use environment variables:
 
 - ``MLB_SECRET_KEY`` - Django project's ``SECRET_KEY``, the only **required variable**.
