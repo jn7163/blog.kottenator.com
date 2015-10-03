@@ -24,16 +24,12 @@ Using pure Python ``virtualenv``:
     pip install -r requirements/base.pip
 
 
+Configuration
+-------------
 
-Local run
----------
+I follow `The Twelve-Factor App <http://12factor.net/>`_ methodology.
 
-.. code:: bash
-
-    export MLB_SECRET_KEY='42'
-    ./manage.py runserver
-
-There are more environment variables that you can specify:
+To configure the project, use environment variables:
 
 - ``MLB_SECRET_KEY`` - Django project's ``SECRET_KEY``, the only **required variable**.
 - ``MLB_DATABASE_URL`` - Django project's database.
@@ -44,6 +40,8 @@ There are more environment variables that you can specify:
   Important only for production site, when you do ``./manage.py collectstatic``, and maybe for some
   third-party Django apps like `django-compressor <https://github.com/django-compressor/django-compressor>`_.
   *Default:* ``./var/static/``
+
+Set them for project run, test, etc.
 
 
 Testing
@@ -61,8 +59,7 @@ Web Fonts
 Currently I carry web-fonts with the code so I don't need Internet to develop the site.
 When I will release the first version, I will take care about web-fonts CDN usage.
 
-As for now, here is little notice about web-fonts embedding
-taken from `CSS-Tricks article <https://css-tricks.com/snippets/css/using-font-face/>`_:
+As for now, here is a little note about web-fonts embedding.
 
 
 Default example
@@ -104,3 +101,6 @@ Chrome  Firefox IE      Safari  Opera   Android iOS
 ======= ======= ======= ======= ======= ======= =======
 5+      3.6+    9+      5.1+    11.5+   4.4+    5.1+
 ======= ======= ======= ======= ======= ======= =======
+
+
+Taken from `CSS-Tricks article <https://css-tricks.com/snippets/css/using-font-face/>`_.
