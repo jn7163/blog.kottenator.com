@@ -4,7 +4,7 @@ Development
 Advanced installation
 ---------------------
 
-I encourage you to install the virtualenv outside the project folder
+I install the virtualenv outside the project folder
 to not "spoil" the IDE search, project indexing, etc.
 For example into ``~/.virtualenvs/my-little-blog/``.
 
@@ -12,7 +12,8 @@ Using ``virtualenvwrapper`` tool:
 
 .. code:: bash
 
-    mkvirtualenv my-little-blog -r requirements/base.pip
+    mkvirtualenv my-little-blog
+    pip install -e .[dev]
 
 Using pure Python ``virtualenv``:
 
@@ -21,7 +22,7 @@ Using pure Python ``virtualenv``:
     mkdir -p ~/.virtualenvs/
     virtualenv ~/.virtualenvs/my-little-blog/
     . ~/.virtualenvs/my-little-blog/bin/activate
-    pip install -r requirements/base.pip
+    pip install -e .[dev]
 
 
 Configuration
@@ -48,7 +49,7 @@ Testing
 
 .. code:: bash
 
-    pip install -r requirements/test.pip
+    pip install -e .[test]
     py.test
 
 

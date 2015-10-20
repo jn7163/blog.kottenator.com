@@ -22,12 +22,12 @@ The only way to install it now is to clone the source code:
 
     git clone https://github.com/kottenator/my-little-blog.git
 
-Now create a virtualenv & pip install requirements.
+Now create a virtualenv & install the package.
 
 .. code:: bash
 
     virtualenv venv && . venv/bin/activate
-    pip install -r requirements/base.pip
+    pip install -e .
 
 
 Local run
