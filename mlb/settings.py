@@ -1,9 +1,9 @@
 import os
-import dj_database_url
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+from settings_overrider import override
 
-SECRET_KEY = os.getenv('MLB_SECRET_KEY')
+
+SECRET_KEY = '...'
 DEBUG = True
 ALLOWED_HOSTS = []
 
@@ -52,13 +52,26 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mlb.wsgi.application'
 
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv('MLB_DATABASE_URL', 'sqlite:///var/run/db.sqlite3'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join('var', 'data', 'db', 'db.sqlite3'),
+    }
 }
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
-STATIC_URL = '/static/'
-STATIC_ROOT = os.getenv('MLB_STATIC_ROOT', os.path.join(BASE_DIR, 'var', 'static'))
 
-# custom settings
-MLB_PROJECT_TITLE = os.getenv('MLB_PROJECT_TITLE', "My Little Blog")
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join('var', 'data', 'static')
+
+# --------------------------------------- Project settings ----------------------------------------
+PROJECT_TITLE = "My Little Blog"
+
+# Override settings with env variables with "MLB_" prefix or with local YAML file
+yaml_path = os.path.join('etc', 'settings.yaml')
+env_prefix = 'MLB_'
+
+if os.path.exists(yaml_path):
+    override(globals(), yaml=yaml_path, env=env_prefix)
+else:
+    override(globals(), env=env_prefix)

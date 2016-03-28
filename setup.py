@@ -1,18 +1,16 @@
 from codecs import open
-import glob
 from os import path
 from setuptools import setup, find_packages
+
 
 here = path.abspath(path.dirname(__file__))
 
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
-glob
-
 setup(
     name='my-little-blog',
-    version='0.1.0.dev0',
+    version='0.1.0.dev1',
     description='Super simple blog engine',
     long_description=long_description,
     url='https://github.com/kottenator/my-little-blog',
@@ -21,18 +19,17 @@ setup(
     license='MIT',
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
-    setup_requires = [
-        'setuptools-git'
-    ],
+    setup_requires=['setuptools-git'],
     install_requires=[
-        'Django~=1.8.0',
-        'Pillow~=2.9'
+        'Django~=1.9.0',
+        'Pillow~=2.9',
+        'settings-overrider~=0.5'
     ],
     extras_require={
         'test': [
-            'pytest',
-            'pytest-django',
-            'pytest-cov'
+            'pytest~=2.9',
+            'pytest-django~=2.9',
+            'pytest-cov~=2.2'
         ],
         'docs': [
             'Sphinx'
