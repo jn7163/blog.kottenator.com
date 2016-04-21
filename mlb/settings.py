@@ -72,6 +72,6 @@ yaml_path = os.path.join('etc', 'settings.yaml')
 env_prefix = 'MLB_'
 
 if os.path.exists(yaml_path):
-    override(globals(), yaml=yaml_path, env=env_prefix)
-else:
-    override(globals(), env=env_prefix)
+    override(globals(), yaml=yaml_path)
+
+override(globals(), env=env_prefix)
