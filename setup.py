@@ -17,7 +17,9 @@ setup(
     author='Rostyslav Bryzgunov',
     author_email='kottenator@gmail.com',
     license='MIT',
-    packages=find_packages(exclude=['tests', 'tests.*']),
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
+    scripts=['bin/manage.py'],
     install_requires=[
         'Django~=1.9.0',
         'Pillow~=2.9',
