@@ -17,9 +17,7 @@ setup(
     author='Rostyslav Bryzgunov',
     author_email='kottenator@gmail.com',
     license='MIT',
-    packages=find_packages(exclude=['tests']),
-    include_package_data=True,
-    setup_requires=['setuptools-git'],
+    packages=find_packages(exclude=['tests', 'tests.*']),
     install_requires=[
         'Django~=1.9.0',
         'Pillow~=2.9',
