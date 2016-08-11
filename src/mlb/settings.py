@@ -13,9 +13,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # blog apps
-    'mlb.core',
+    'compressor',
+    'compressor_toolkit',
     'mlb.blog',
 )
 
@@ -43,7 +42,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'mlb.core.context_processors.project_metadata'
+                'mlb.blog.context_processors.project_metadata'
             ],
         },
     },
@@ -64,6 +63,17 @@ TIME_ZONE = 'UTC'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join('var', 'data', 'static')
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'compressor_toolkit.precompilers.SCSSCompiler'),
+    ('module', 'compressor_toolkit.precompilers.ES6Compiler')
+)
+
 # --------------------------------------- Project settings ----------------------------------------
 PROJECT_TITLE = "My Little Blog"
 
@@ -72,6 +82,7 @@ yaml_path = os.path.join('etc', 'settings.yaml')
 env_prefix = 'MLB_'
 
 if os.path.exists(yaml_path):
+    print("Using settings from \"{}\" ...".format(yaml_path))
     override(globals(), yaml=yaml_path)
 
 override(globals(), env=env_prefix)

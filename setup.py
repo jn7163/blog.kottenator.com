@@ -20,7 +20,9 @@ setup(
     install_requires=[
         'Django~=1.9.0',
         'Pillow~=2.9',
-        'settings-overrider~=0.5'
+        'settings-overrider~=0.5',
+        'django-compressor~=2.0',
+        'django-compressor-toolkit~=0.5',
     ],
     extras_require={
         'dev': ['check-manifest'],

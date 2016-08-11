@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+{% load compress %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ project_metadata.title }}{% endblock %}</title>
+
+    {% compress css %}
+      <link rel="stylesheet" type="text/x-scss" href="{% static 'blog/base.scss' %}">
+    {% endcompress %}
+
+    {% block head %}{% endblock %}
+  </head>
+<body>
+  <header class="page-header">
+    <h1 class="title">
+      <a href="{% url 'blog:articles' %}">
+        {{ project_metadata.title }}
+      </a>
+    </h1>
+  </header>
+
+  <div class="page-container {% block page_class %}{% endblock %}">
+    {% block page_content %}
+    {% endblock %}
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+
+  {% compress js %}
+    <script type="module" src="{% static 'blog/base.js' %}"></script>
+  {% endcompress %}
+
+  {% block foot %}
+
+  {% endblock %}
+</body>
+</html>
