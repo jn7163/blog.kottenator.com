@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.views.generic.base import TemplateView
 
-# Create your views here.
+
+class ArticlesView(TemplateView):
+    template_name = 'blog/articles.html'
+
+articles = ArticlesView.as_view()

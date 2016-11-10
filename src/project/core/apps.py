@@ -2,5 +2,5 @@ from django.apps.config import AppConfig
 
 
 class CoreConfig(AppConfig):
-    name = 'mlb.core'
+    name = 'project.core'
     verbose_name = 'Core'

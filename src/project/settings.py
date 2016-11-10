@@ -13,6 +13,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
+    'compressor_toolkit',
 
     # Project apps
     'project.core',
@@ -59,6 +61,17 @@ DATABASES = {
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join('var', 'data', 'static')
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'compressor_toolkit.precompilers.SCSSCompiler'),
+    ('module', 'compressor_toolkit.precompilers.ES6Compiler')
+)
+
 # --------------------------------------- Project settings ----------------------------------------
 
 # Override settings with env variables with "DJANGO_" prefix or with local YAML file
@@ -66,6 +79,7 @@ yaml_path = os.path.join('etc', 'settings.yaml')
 env_prefix = 'DJANGO_'
 
 if os.path.exists(yaml_path):
+    print("Using settings from \"{}\" ...".format(yaml_path))
     override(globals(), yaml=yaml_path)
 
 override(globals(), env=env_prefix)

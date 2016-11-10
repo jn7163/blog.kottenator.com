@@ -2,5 +2,5 @@ from django.apps.config import AppConfig
 
 
 class BlogConfig(AppConfig):
-    name = 'mlb.blog'
+    name = 'project.blog'
     verbose_name = 'Blog'

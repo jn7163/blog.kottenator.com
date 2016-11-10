@@ -1,6 +1,8 @@
 from django.conf.urls import url
-from django.views.generic.base import TemplateView
+
+import project.blog.views
+
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='blog/index.html')),
+    url(r'^$', project.blog.views.articles, name='articles'),
 ]

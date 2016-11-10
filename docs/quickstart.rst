@@ -2,9 +2,7 @@ Quick Start
 ===========
 
 I will provide instructions for Linux/Mac OS X.
-If you have experience with Python development in Windows -
-it should be easy to do the same in Windows too *(it's just slightly different, you know)*.
-
+It's similar for Windows, *just slightly different*, you know.
 
 Requisites
 ----------
@@ -15,14 +13,13 @@ Requisites
 Installation
 ------------
 
-Project is in development and there is no release on PyPI yet.
-The only way to install it now is to clone the source code:
+Clone the source code:
 
 .. code:: bash
 
-    git clone https://github.com/kottenator/my-little-blog.git
+    git clone https://github.com/kottenator/blog.git
 
-Now create a virtualenv & install the package.
+Create a virtualenv & install the package.
 
 .. code:: bash
 
@@ -35,7 +32,7 @@ Local run
 
 .. code:: bash
 
-    export MLB_SECRET_KEY='42'
+    export DJANGO_SECRET_KEY='42'
     ./manage.py runserver
 
 There are more environment variables that you can specify.

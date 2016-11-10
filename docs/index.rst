@@ -1,10 +1,9 @@
-.. my-little-blog documentation master file
+.. documentation master file
 
-"My Little Blog" documentation
-==============================
+Kottenator's Blog
+=================
 
-"My Little Blog" (MLB) is a super simple blog engine that I've started
-as my own blog but then decided to share with all the people.
+Super simple blog engine for my own.
 
 TOC:
 

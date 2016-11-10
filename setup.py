@@ -6,11 +6,11 @@ with open('README.rst', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='my-little-blog',
+    name='blog.kottenator.com',
     version='0.5.0.dev1',
     description='Super simple blog engine',
     long_description=long_description,
-    url='https://github.com/kottenator/my-little-blog',
+    url='https://github.com/kottenator/blog.kottenator.com',
     author='Rostyslav Bryzgunov',
     author_email='kottenator@gmail.com',
     license='MIT',
@@ -20,7 +20,9 @@ setup(
     install_requires=[
         'Django~=1.10.0',
         'Pillow~=3.4',
-        'settings-overrider~=0.5'
+        'settings-overrider~=0.5',
+        'django-compressor~=2.0',
+        'django-compressor-toolkit~=0.5'
     ],
     extras_require={
         'dev': ['check-manifest'],

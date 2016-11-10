@@ -1,1 +1,1 @@
-default_app_config = 'mlb.core.apps.CoreConfig'
+default_app_config = 'project.core.apps.CoreConfig'

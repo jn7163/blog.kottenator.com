@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('published_at', models.DateTimeField(null=True, blank=True)),
             ],
             options={
-                'db_table': 'mlb_blog_article',
+                'db_table': 'blog_article',
             },
         ),
         migrations.CreateModel(
@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('slug', models.SlugField(unique=True, max_length=2000)),
             ],
             options={
-                'db_table': 'mlb_blog_label',
+                'db_table': 'blog_label',
             },
         ),
         migrations.AddField(

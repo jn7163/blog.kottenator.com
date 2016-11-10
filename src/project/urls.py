@@ -1,5 +1,8 @@
 from django.conf.urls import include, url
 
+import project.blog.urls
+
+
 urlpatterns = [
-    url('', include('mlb.blog.urls')),
+    url('', include(project.blog.urls, namespace='project')),
 ]

@@ -6,30 +6,30 @@ Advanced installation
 
 I install the virtualenv outside the project folder
 to not "spoil" the IDE search, project indexing, etc.
-For example into ``~/.virtualenvs/my-little-blog/``.
+For example into ``~/.virtualenvs/blog.kottenator.com/``.
 
 Using ``virtualenvwrapper`` tool:
 
 .. code:: bash
 
-    mkvirtualenv my-little-blog
-    pip install -e .[dev]
+    mkvirtualenv -p python3 blog.kottenator.com
+    pip install -e '.[dev]'
 
 Using pure Python ``virtualenv``:
 
 .. code:: bash
 
     mkdir -p ~/.virtualenvs/
-    virtualenv ~/.virtualenvs/my-little-blog/
-    . ~/.virtualenvs/my-little-blog/bin/activate
-    pip install -e .[dev]
+    virtualenv ~/.virtualenvs/blog.kottenator.com/
+    . ~/.virtualenvs/blog.kottenator.com/bin/activate
+    pip install -e '.[dev]'
 
 
 Configuration
 -------------
 
 I follow `The Twelve-Factor App <http://12factor.net/>`_ methodology.
-To configure the project, use environment variables:
+To configure the project, I use environment variables:
 
 - ``DJANGO_SECRET_KEY`` - Django project's ``SECRET_KEY``, the only **required variable**.
 - ``DJANGO_DATABASE_URL`` - Django project's database.
@@ -48,17 +48,17 @@ Testing
 
 .. code:: bash
 
-    pip install -e .[test]
+    pip install -e '.[test]'
     py.test
 
 
 Web Fonts
 ---------
 
-Currently I carry web-fonts with the code so I don't need Internet to develop the site.
-When I will release the first version, I will take care about web-fonts CDN usage.
+Currently I ship web fonts together with the code so I don't need Internet to develop the site.
+In the future, maybe CDN is the way.
 
-As for now, here is a little note about web-fonts embedding.
+As for now, here is a little note about web fonts embedding.
 
 
 Default example

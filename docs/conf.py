@@ -1,4 +1,4 @@
-project = 'my-little-blog'
+project = 'blog.kottenator.com'
 author = 'Rostyslav Bryzgunov'
 copyright = '2015, Rostyslav Bryzgunov'
 master_doc = 'index'

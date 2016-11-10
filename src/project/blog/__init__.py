@@ -1,1 +1,1 @@
-default_app_config = 'mlb.blog.apps.BlogConfig'
+default_app_config = 'project.blog.apps.BlogConfig'

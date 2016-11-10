@@ -3,3 +3,5 @@
 /docs/_build/
 /dist/
 /src/*.egg-info/
+/node_modules/
+/etc/settings*.yaml

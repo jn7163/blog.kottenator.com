@@ -1,6 +1,6 @@
 include README.rst
 include LICENSE
-recursive-include src/mlb/core/templates *
-recursive-include src/mlb/core/static *
-recursive-include src/mlb/blog/templates *
-recursive-include src/mlb/blog/static *
+recursive-include src/project/core/templates *
+recursive-include src/project/core/static *
+recursive-include src/project/blog/templates *
+recursive-include src/project/blog/static *

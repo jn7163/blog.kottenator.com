@@ -13,7 +13,7 @@ class Article(models.Model):
     published_at = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        db_table = 'mlb_blog_article'
+        db_table = 'blog_article'
 
     def __str__(self):
         return self.title
@@ -24,7 +24,7 @@ class Label(models.Model):
     slug = models.SlugField(max_length=2000, unique=True)
 
     class Meta:
-        db_table = 'mlb_blog_label'
+        db_table = 'blog_label'
 
     def __str__(self):
         return self.title
