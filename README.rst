@@ -1,7 +1,6 @@
-My Little Blog
-==============
+blog.kottenator.com
+===================
 
-"My Little Blog" (MLB) is a super simple blog engine that I've started
-as my own blog but then decided to share with all the people.
+My personal blog.
 
-`Read the Docs <http://my-little-blog.readthedocs.org/en/latest/>`_ for details.
+[Note]: `Read the Docs <http://kottenator.readthedocs.org/en/latest/>`_ for details.

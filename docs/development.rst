@@ -31,12 +31,11 @@ Configuration
 I follow `The Twelve-Factor App <http://12factor.net/>`_ methodology.
 To configure the project, use environment variables:
 
-- ``MLB_SECRET_KEY`` - Django project's ``SECRET_KEY``, the only **required variable**.
-- ``MLB_DATABASE_URL`` - Django project's database.
+- ``DJANGO_SECRET_KEY`` - Django project's ``SECRET_KEY``, the only **required variable**.
+- ``DJANGO_DATABASE_URL`` - Django project's database.
   See `dj-database-url <https://github.com/kennethreitz/dj-database-url>`_ for details.
   *Default:* ``sqlite:///var/run/db.sqlite3``
-- ``MLB_PROJECT_TITLE`` - site's title that will be displayed in header. *Default:* ``My Little Blog``
-- ``MLB_STATIC_ROOT`` - path to Django project static files folder.
+- ``DJANGO_STATIC_ROOT`` - path to Django project static files folder.
   Important only for production site, when you do ``./manage.py collectstatic``, and maybe for some
   third-party Django apps like `django-compressor <https://github.com/django-compressor/django-compressor>`_.
   *Default:* ``./var/static/``
