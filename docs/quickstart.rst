@@ -17,7 +17,7 @@ Clone the source code:
 
 .. code:: bash
 
-    git clone https://github.com/kottenator/blog.git
+    git clone https://github.com/kottenator/blog.kottenator.com.git
 
 Create a virtualenv & install the package.
 
