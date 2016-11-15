@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.0"
+  },
+  "devDependencies": {
+    "node-sass": "^3.12",
+    "postcss-cli": "^2.6",
+    "autoprefixer": "^6.5",
+    "browserify": "^13.1",
+    "babelify": "^7.3"
+  }
+}

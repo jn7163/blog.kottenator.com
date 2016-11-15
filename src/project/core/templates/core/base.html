@@ -12,7 +12,8 @@
       <link rel="stylesheet" type="text/x-scss" href="{% static 'blog/base.scss' %}">
     {% endcompress %}
 
-    {% block head %}{% endblock %}
+    {% block head %}
+    {% endblock %}
   </head>
 <body>
   <header class="page-header">
@@ -28,14 +29,11 @@
     {% endblock %}
   </div>
 
-  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
-
   {% compress js %}
     <script type="module" src="{% static 'blog/base.js' %}"></script>
   {% endcompress %}
 
   {% block foot %}
-
   {% endblock %}
 </body>
 </html>

@@ -1,10 +1,10 @@
+import $ from 'jquery';
+
 class Greeting {
-  constructor () {
-    this.x = "Kottenator's Blog";
-    console.log(`Welcome to ${this.x}!`);
+  constructor() {
+    this.title = "Kottenator's Blog";
+    console.log(`Welcome to ${this.title}!`);
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  new Greeting();
-});
+$(() => new Greeting());

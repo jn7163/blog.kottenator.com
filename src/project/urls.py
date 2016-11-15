@@ -4,5 +4,5 @@ import project.blog.urls
 
 
 urlpatterns = [
-    url('', include(project.blog.urls, namespace='project')),
+    url('', include(project.blog.urls, namespace='blog')),
 ]

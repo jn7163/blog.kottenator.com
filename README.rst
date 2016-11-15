@@ -1,6 +1,6 @@
 blog.kottenator.com
 ===================
 
-My personal blog.
+Kottenator's personal blog.
 
-[Note]: `Read the Docs <http://kottenator.readthedocs.org/en/latest/>`_ for details.
+[Note]: `Read the Docs <http://kottenator-blog.readthedocs.io/>`_ for details.
